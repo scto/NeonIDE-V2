@@ -56,11 +56,28 @@ if [ ! -d "$HOME/android-sdk/build-tools/36.0.0" ]; then
 
     mkdir ~/.gyp && echo "{'variables':{'android_ndk_path':''}}" > ~/.gyp/include.gypi
     
-    echo "Downloading Android build-tools..."
+echo "Downloading HomuHomu833 Android SDK Tools v36.0.0..."
     
-    curl -O -L https://github.com/AndroidStudio-App/AndroidSDK-Tools-/releases/download/release-platform-tools-36.0.0-arm64-v8a/AndroidSDK-36.0.0.zip
-    unzip -oq AndroidSDK-36.0.0.zip && rm AndroidSDK-36.0.0.zip
-    mv -f build-tools platform-tools others $HOME/android-sdk
+    # Temporäres Verzeichnis erstellen
+    mkdir -p "$HOME/tmp_sdk_extract"
+    
+    # Exakter Download-Link wie gefordert
+    curl -L -o "$HOME/tmp_sdk_extract/android-sdk.tar.xz" "https://github.com/HomuHomu833/android-sdk-custom/releases/download/36.0.0/android-sdk-aarch64-linux-musl.tar.xz"
+    
+    # Tarball direkt in das temporäre Verzeichnis entpacken
+    tar -xJf "$HOME/tmp_sdk_extract/android-sdk.tar.xz" -C "$HOME/tmp_sdk_extract"
+    
+    # Verschieben der extrahierten Ordner in Ihr $ANDROID_HOME Verzeichnis
+    mv -f "$HOME/tmp_sdk_extract/build-tools" "$HOME/android-sdk/"
+    mv -f "$HOME/tmp_sdk_extract/platform-tools" "$HOME/android-sdk/"
+    mv -f "$HOME/tmp_sdk_extract/others" "$HOME/android-sdk/"
+    
+    # Temporäres Arbeitsverzeichnis sauber löschen
+    rm -rf "$HOME/tmp_sdk_extract"
+    
+    # curl -O -L https://github.com/AndroidStudio-App/AndroidSDK-Tools-/releases/download/release-platform-tools-36.0.0-arm64-v8a/AndroidSDK-36.0.0.zip
+    # unzip -oq AndroidSDK-36.0.0.zip && rm AndroidSDK-36.0.0.zip
+    # mv -f build-tools platform-tools others $HOME/android-sdk
     
     echo "Android build-tools installed successfully!"
 fi
