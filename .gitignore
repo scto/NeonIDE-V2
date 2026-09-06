@@ -1,34 +1,47 @@
-# Gradle files
+# Gradle / build outputs
 .gradle/
 build/
+app/build/
+AndroidTreeView/**/build/
 
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.aab
-*.apk
-output-metadata.json
-
-# IntelliJ
-*.iml
+# Android Studio/IDE
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+*.iml
+*.iws
+.DS_Store
+.acside/
 
-# Keystore files
-*.jks
-*.keystore
+# APKs / outputs
+*.apk
+*.aab
+outputs/
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
+# Termux bootstrap archives (too large for git; keep local or fetch at build time)
+bootstrap-*.zip
+app/src/main/cpp/bootstrap-*.zip
+app/src/main/cpp/generated/bootstrap-stamp.S
+app/src/main/cpp/generated/
+app/src/main/assets/bootstrap/*.zip
 
-# Android Profiling
-*.hprof
+# Kotlin/IDE caches
+.kotlin/
+
+# Temporary
+.tmp/
+tmp/
+docs/
+
+# Submodule conversion backups (local only)
+.tmp/agents_backup_*/
+.tmp/oniguruma_backup_*/
+
+# Local reference copies of Android Studio template sources (for vendoring/comparison)
+_studio_tpl_ref/
+
+# --- Local binary bundles (not committed) ---
+# Copied android-tree-sitter AARs/JARs for local builds.
+# If you *do* want to commit them, remove these ignore rules.
+/app/libs/android-tree-sitter-*.aar
+/app/libs/tree-sitter-*-*.aar
+/app/libs/annotations.jar
+/app/libs/annotation-processors.jar

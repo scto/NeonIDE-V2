@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16">
+
+    <!-- document outline -->
+    <path
+        android:fillColor="#CED0D6"
+        android:fillType="evenOdd"
+        android:pathData="M11,1
+            H7.914
+            C7.516,1 7.135,1.158 6.854,1.439
+            L3.439,4.854
+            C3.158,5.135 3,5.516 3,5.914
+            V13
+            C3,14.105 3.895,15 5,15
+            H11
+            C12.105,15 13,14.105 13,13
+            V3
+            C13,1.895 12.105,1 11,1Z
+            M4,13
+            C4,13.552 4.448,14 5,14
+            H11
+            C11.552,14 12,13.552 12,13
+            V3
+            C12,2.448 11.552,2 11,2
+            H8
+            V4.5
+            C8,5.328 7.328,6 6.5,6
+            H4
+            V13Z
+            M4.707,5
+            L7,2.707
+            V4.5
+            C7,4.776 6.776,5 6.5,5
+            H4.707Z"/>
+
+    <!-- document fill -->
+    <path
+        android:fillColor="#43454A"
+        android:pathData="M5,14
+            C4.448,14 4,13.552 4,13
+            V6
+            H6.5
+            C7.328,6 8,5.328 8,4.5
+            V2
+            H11
+            C11.552,2 12,2.448 12,3
+            V13
+            C12,13.552 11.552,14 11,14
+            H5Z"/>
+
+    <!-- document fold -->
+    <path
+        android:fillColor="#43454A"
+        android:pathData="M7,2.707
+            L4.707,5
+            H6.5
+            C6.776,5 7,4.776 7,4.5
+            V2.707Z"/>
+
+</vector>

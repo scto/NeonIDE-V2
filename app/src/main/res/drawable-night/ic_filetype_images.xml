@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16">
+
+    <!-- rounded rect fill + stroke -->
+    <path
+        android:fillColor="#25324D"
+        android:strokeColor="#548AF7"
+        android:strokeWidth="1"
+        android:pathData="M4,2.5
+            H12
+            C12.828,2.5 13.5,3.172 13.5,4
+            V12
+            C13.5,12.828 12.828,13.5 12,13.5
+            H4
+            C3.172,13.5 2.5,12.828 2.5,12
+            V4
+            C2.5,3.172 3.172,2.5 4,2.5Z"/>
+
+    <!-- diagonal line -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#548AF7"
+        android:strokeWidth="1"
+        android:pathData="M2.5,9.336
+            L4.182,7.669
+            C4.561,7.294 5.166,7.282 5.560,7.640
+            L11.986,13.5"/>
+
+    <!-- circle outline -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#548AF7"
+        android:strokeWidth="1"
+        android:pathData="M10,4.5
+            a1.5,1.5 0 1,1 0,3
+            a1.5,1.5 0 1,1 0,-3Z"/>
+
+</vector>

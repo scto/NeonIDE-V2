@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.neonide.studio.widget.NoSwipeDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content -->
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Drawer Content -->
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/file_tree_drawer_view"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="?android:attr/windowBackground" />
+
+</com.neonide.studio.widget.NoSwipeDrawerLayout>

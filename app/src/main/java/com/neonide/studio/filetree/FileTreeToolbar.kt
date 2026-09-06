@@ -1,0 +1,143 @@
+package com.neonide.studio.filetree
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.neonide.studio.R
+import com.neonide.studio.ui.components.AppIcon
+import com.neonide.studio.ui.components.ToggleMenuItem
+
+@Composable
+internal fun FileTreeToolbar(
+    onCollapseAll: () -> Unit,
+    onExpandAll: () -> Unit,
+    onToggleSearch: () -> Unit,
+    isCompactMode: Boolean,
+    onToggleCompact: () -> Unit,
+    searchRegex: Boolean,
+    onToggleRegex: () -> Unit,
+    searchCaseSensitive: Boolean,
+    onToggleCaseSensitive: () -> Unit,
+    menuExpanded: Boolean,
+    onToggleMenu: () -> Unit,
+    onDismissMenu: () -> Unit,
+    searchOpen: Boolean = false,
+    searchQuery: String = "",
+    onQueryChange: (String) -> Unit = {}
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(40.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        IconButton(onClick = onCollapseAll) {
+            AppIcon(painter = painterResource(R.drawable.ic_collapse_all))
+        }
+        IconButton(onClick = onExpandAll) {
+            AppIcon(painter = painterResource(R.drawable.ic_expand_all))
+        }
+        IconButton(onClick = onToggleSearch) {
+            AppIcon(painter = painterResource(R.drawable.ic_search))
+        }
+
+        if (searchOpen) {
+            BasicTextField(
+                value = searchQuery,
+                onValueChange = onQueryChange,
+                singleLine = true,
+                textStyle = TextStyle(
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onSurface
+                ),
+                cursorBrush = androidx.compose.ui.graphics.SolidColor(
+                    MaterialTheme.colorScheme.onSurface
+                ),
+                modifier = Modifier
+                    .weight(1f)
+                    .height(32.dp)
+                    .background(
+                        MaterialTheme.colorScheme.surfaceVariant,
+                        RoundedCornerShape(3.dp)
+                    )
+                    .border(
+                        1.dp,
+                        MaterialTheme.colorScheme.outlineVariant,
+                        RoundedCornerShape(3.dp)
+                    )
+                    .padding(horizontal = 6.dp, vertical = 6.dp),
+                decorationBox = { innerTextField ->
+                    Box {
+                        if (searchQuery.isEmpty()) {
+                            Text(
+                                text = " ",
+                                fontSize = 12.sp,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                        }
+                        innerTextField()
+                    }
+                }
+            )
+            IconButton(onClick = onToggleSearch) {
+                AppIcon(painter = painterResource(R.drawable.ic_close))
+            }
+        } else {
+            Spacer(modifier = Modifier.weight(1f))
+        }
+
+        Box {
+            IconButton(onClick = onToggleMenu) {
+                AppIcon(painter = painterResource(R.drawable.ic_menu))
+            }
+            DropdownMenu(
+                expanded = menuExpanded,
+                onDismissRequest = onDismissMenu
+            ) {
+                ToggleMenuItem(
+                    text = stringResource(R.string.compact_tree),
+                    checked = isCompactMode,
+                    onToggle = {
+                        onToggleCompact()
+                        onDismissMenu()
+                    }
+                )
+                ToggleMenuItem(
+                    text = stringResource(R.string.regex),
+                    checked = searchRegex,
+                    onToggle = {
+                        onToggleRegex()
+                        onDismissMenu()
+                    }
+                )
+                ToggleMenuItem(
+                    text = stringResource(R.string.case_sensitive),
+                    checked = searchCaseSensitive,
+                    onToggle = {
+                        onToggleCaseSensitive()
+                        onDismissMenu()
+                    }
+                )
+            }
+        }
+    }
+}

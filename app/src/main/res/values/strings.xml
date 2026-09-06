@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NeonIDE Studio</string>
+
+    <!-- permission card -->
+    <string name="permissions_required_to_continue">Permissions Required To Continue</string>
+    <string name="all_files_access">All Files Access</string>
+    <string name="all_files_access_desc">Required to manage files on storage</string>
+    <string name="install_unknown_apps">Install Unknown Apps</string>
+    <string name="install_unknown_apps_desc">Required to install Build APK file</string>
+    <string name="notifications">Notifications</string>
+    <string name="notifications_desc">Receive Notifications from the app</string>
+    <string name="continue_button">Continue</string>
+    <string name="granted">Granted</string>
+    <string name="grant">Grant</string>
+
+    <!-- main activity -->
+    <string name="neonide">NeonIDE</string>
+    <string name="modern_mobile_development">Modern Mobile Development</string>
+    <string name="new_project">New Project</string>
+    <string name="git_clone">Git Clone</string>
+    <string name="setup_devkit">Setup DevKit</string>
+    <string name="terminal">Terminal</string>
+    <string name="extensions">Extensions</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+
+   <!-- git clone screen -->
+    <string name="clone_repository">Clone Repository</string>
+    <string name="repository_url">Repository URL</string>
+    <string name="repository_name">Repository Name</string>
+    <string name="destination_path">Destination Path</string>
+    <string name="branch_optional">Branch (optional)</string>
+    <string name="open_project_after_clone">Open project after clone</string>
+    <string name="use_credentials">Use credentials</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="shallow_clone">Shallow clone</string>
+    <string name="single_branch">Single branch</string>
+    <string name="recurse_submodules">Recurse submodules</string>
+    <string name="shallow_submodules">Shallow submodules</string>
+    <string name="depth">Depth</string>
+    <string name="choose_folder">Choose folder</string>
+    <string name="stop">Stop</string>
+    <string name="cloning">Cloning…</string>
+    <string name="clone">Clone</string>
+    <string name="url_empty">Repository URL cannot be empty</string>
+    <string name="url_invalid">Invalid repository URL</string>
+    <string name="name_empty">Name cannot be empty</string>
+    <string name="name_invalid">Only letters, numbers, . _ -</string>
+    <string name="depth_invalid">Depth must be a positive number</string>
+    <string name="username_required">Username required</string>
+    <string name="password_required">Password required</string>
+    <string name="dest_not_exist">Destination does not exist and cannot be created</string>
+    <string name="dest_already_exists">Project directory already exists</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="done">Done – %s</string>
+    <string name="failed">Failed</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="stopping">Stopping…</string>
+    <string name="cloning_status">Cloning…</string>
+    <string name="repo_name_default">project</string>
+
+    <string name="editor_text_to_search">Text to search</string>
+    <string name="editor_replacement">Replacement</string>
+    <string name="project_dir_missing">No project directory selected. Open a project first.</string>
+    <string name="gradle_wrapper_missing">Gradle wrapper not found in this project (missing gradlew or gradle/wrapper files).</string>
+    <string name="gradle_wrapper_repaired">Gradle wrapper jar was missing and has been restored.</string>
+    <string name="gradle_wrapper_repair_failed">Gradle wrapper jar is missing and could not be restored.</string>
+    <string name="build_project">Build project status</string>
+    <string name="build_running">variant build is running…</string>
+    <string name="build_started">Build started…</string>
+    <string name="sync_started">Sync started…</string>
+    <string name="build_success">BUILD SUCCESSFUL</string>
+    <string name="build_failed">BUILD FAILED</string>
+    <string name="sora_editor_last">Last</string>
+    <string name="sora_editor_next">Next</string>
+    <string name="sora_editor_replace">Replace</string>
+    <string name="sora_editor_replaceAll">Replace All</string>
+    <string name="sora_editor_replacement">Replacement</string>
+    <string name="sora_editor_text_to_search">Text to search</string>
+    <string name="sora_editor_editor_search_replacing">Replacing texts…</string>
+    <string name="sora_editor_editor_search_busy">Editor is still preparing…</string>
+    <string name="sora_editor_editor_formatting">Formatting your code…</string>
+    <string name="sora_editor_more">More</string>
+    <string name="sora_editor_diagnostics_more_actions">More Actions...</string>
+    <string name="sora_editor_clip_text_length_too_large">Text is too large to copy</string>
+    <string name="sora_editor_long_select">Long Select</string>
+    <string name="signature_help_prev">Previous signature</string>
+    <string name="signature_help_next">Next signature</string>
+    <string name="copy_text">Copy</string>
+    <string name="text_selection_more">More…</string>
+
+    <!-- Create Project -->
+    <string name="choose_template">Choose Template</string>
+    <string name="pick_template_hint">Pick a starter template and configure your project</string>
+    <string name="project_configuration">Project Configuration</string>
+    <string name="project_name">Project Name</string>
+    <string name="description">Description</string>
+    <string name="platforms">Platforms</string>
+    <string name="package_name">Package Name</string>
+    <string name="project_location">Project Location</string>
+    <string name="browse">Browse</string>
+    <string name="language">Language</string>
+    <string name="minimum_sdk">Minimum SDK</string>
+    <string name="use_gradle_kotlin_dsl">Use Gradle Kotlin DSL</string>
+    <string name="create">Create</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_project_type">Choose how you want to start your project</string>
+    <string name="flutter_project">Flutter Project</string>
+    <string name="flutter_not_installed">Flutter is not installed</string>
+    <string name="android_template">Android Template</string>
+    <string name="empty_folder">Empty Folder</string>
+    <string name="create_project_error_invalid_name">Invalid project name</string>
+    <string name="create_project_error_invalid_package">Invalid package name</string>
+    <string name="create_project_error_dir_exists">Directory already exists</string>
+    <string name="create_project_success">Project created successfully</string>
+    <string name="err_invalid_picked_dir">Invalid directory selected</string>
+    <string name="compose_requires_kotlin">Jetpack Compose requires Kotlin</string>
+
+    <!-- Template names & descriptions -->
+    <string name="tpl_no_activity_name">No Activity</string>
+    <string name="tpl_no_activity_desc">Empty project without any activity</string>
+    <string name="tpl_empty_activity_name">Empty Activity</string>
+    <string name="tpl_empty_activity_desc">Basic empty activity</string>
+    <string name="tpl_cpp_activity_name">Native C++</string>
+    <string name="tpl_cpp_activity_desc">Activity with native C++ support</string>
+    <string name="tpl_basic_activity_name">Basic Activity</string>
+    <string name="tpl_basic_activity_desc">Activity with a Floating Action Button</string>
+    <string name="tpl_nav_drawer_activity_name">Navigation Drawer</string>
+    <string name="tpl_nav_drawer_activity_desc">Activity with a navigation drawer</string>
+    <string name="tpl_bottom_nav_activity_name">Bottom Navigation</string>
+    <string name="tpl_bottom_nav_activity_desc">Activity with bottom navigation</string>
+    <string name="tpl_tabbed_activity_name">Tab Activity</string>
+    <string name="tpl_tabbed_activity_desc">Activity with tabs</string>
+    <string name="tpl_no_androidx_activity_name">No AndroidX Activity</string>
+    <string name="tpl_no_androidx_activity_desc">Activity without AndroidX dependencies</string>
+    <string name="tpl_compose_activity_name">Compose Activity</string>
+    <string name="tpl_compose_activity_desc">Activity using Jetpack Compose</string>
+
+    <!-- Open Project -->
+    <string name="open_project">Open Project</string>
+    <string name="browse_other_location">Browse other location</string>
+    <string name="search_projects_hint">Search projects…</string>
+    <string name="no_projects_found">No projects found</string>
+    <string name="no_projects_match_search">No projects match your search</string>
+    <string name="recent_badge">Recent</string>
+
+    <!-- Project Actions -->
+    <string name="backup_project">Backup project</string>
+    <string name="delete_project_title_short">Delete</string>
+    <string name="rename">Rename</string>
+    <string name="delete_project_title">Delete Project</string>
+    <string name="delete_project_message">Are you sure you want to delete \"%s\"? This cannot be undone.</string>
+    <string name="delete">Delete</string>
+    <string name="project_deleted_success">Project deleted successfully</string>
+    <string name="project_delete_failed">Failed to delete project</string>
+    <string name="new_project_name">New project name</string>
+    <string name="rename_project">Rename Project</string>
+    <string name="error">Error</string>
+    <string name="invalid_name">Invalid Name</string>
+    <string name="invalid_project_name_message">Project name must start with a letter and contain only letters, digits, or underscores.</string>
+    <string name="name_already_exists">Name Already Exists</string>
+    <string name="project_name_exists_message">A project named \"%s\" already exists.</string>
+    <string name="project_renamed_success">Project renamed successfully</string>
+    <string name="project_rename_failed">Failed to rename project</string>
+    <string name="backup_in_progress_title">Backing up…</string>
+    <string name="backup_in_progress_message">Creating backup archive…</string>
+    <string name="backup_completed_title">Backup Complete</string>
+    <string name="backup_completed_message">\"%1$s\" backed up to:\n%2$s</string>
+    <string name="backup_failed_title">Backup Failed</string>
+    <string name="backup_failed_message">Could not create backup: %s</string>
+    
+    <!-- file tree context menu -->
+    <string name="cut">Cut</string>
+    <string name="copy">Copy</string>
+    <string name="paste">Paste</string>
+    <string name="new_file">New File</string>
+    <string name="new_directory">New Directory</string>
+    <string name="copy_path">Copy Path</string>
+    <string name="clear_clipboard">Clear clipboard</string>
+    <string name="clipboard_hint">%1$s: %2$s — long-press a folder to paste</string>
+    <string name="file_or_folder_exists">file or folder already exists</string>
+    <string name="delete_confirm">Delete \'%s\'?</string>
+    <string name="collapse_all">Collapse All</string>
+    <string name="expand_all">Expand All</string>
+    <string name="search">Search</string>
+    <string name="close_search">Close search</string>
+    <string name="options">Options</string>
+    <string name="compact_tree">Compact Tree</string>
+    <string name="regex">Regex</string>
+    <string name="case_sensitive">Case Sensitive</string>
+    <string name="ok">OK</string>
+
+    <!-- editor -->
+    <string name="build">Build</string>
+    <string name="variant_build">Variant Build</string>
+    <string name="debug">Debug</string>
+    <string name="release">Release</string>
+    <string name="menu">Menu</string>
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="save">Save</string>
+    <string name="build_run">Build/Run</string>
+    <string name="sync">Sync</string>
+    <string name="more">More</string>
+    <string name="action_mode">Action Mode</string>
+    <string name="search_panel">Search Panel</string>
+    <string name="feature_switches">Feature Switches</string>
+    <string name="symbol_bar">Symbol Bar</string>
+    <string name="wordwrap">Wordwrap</string>
+    <string name="line_number">Line Number</string>
+    <string name="pin_line_number">Pin Line Number</string>
+    <string name="magnifier">Magnifier</string>
+    <string name="use_icu">Use ICU</string>
+    <string name="completion_animation">Completion Animation</string>
+    <string name="soft_keyboard">Soft Keyboard</string>
+    <string name="disable_soft_kbd_hard_kbd">Disable Soft Kbd on Hard Kbd</string>
+    <string name="configuration">Configuration</string>
+    <string name="switch_color_scheme">Switch Color Scheme</string>
+    <string name="switch_typeface">Switch Typeface</string>
+    <string name="close_this">Close this</string>
+    <string name="close_others">Close others</string>
+    <string name="close_all">Close all</string>
+    <string name="replace">Replace</string>
+    <string name="all">All</string>
+    <string name="case_insensitive">Case Insensitive</string>
+    <string name="select_typeface">Select Typeface</string>
+    <string name="select_color_scheme">Select Color Scheme</string>
+
+    <!-- extensions -->
+    <string name="retry">Retry</string>
+    <string name="remove">Remove</string>
+    <string name="update">Update</string>
+    <string name="install">Install</string>
+    
+    <!-- Editor bottom -->
+    <string name="open_terminal">Open Terminal</string>
+    
+    <!-- Close project -->
+    <string name="close">Confirm</string>
+    <string name="exit_project">Close Project</string>
+    <string name="exit_project_message">Close project and Exit editor?</string>
+
+    <!-- App Settings -->
+    <string name="color_scheme">Color scheme</string>
+    <string name="change_color_scheme">Change Color scheme</string>
+    <string name="follow_system">Follow system</string>
+    <string name="dark_mode">Dark</string>
+    <string name="light_mode">Light</string>
+    <string name="dynamic_colors">Dynamic Colors</string>
+    <string name="dynamic_colors_desc">Use Material You dynamic colors</string>
+
+    <!-- editor features -->
+    <string name="minimap">Minimap</string>
+    <string name="auto_indent">Auto Indent</string>
+    <string name="bracket_highlight">Bracket Highlight</string>
+    <string name="bold_matching_brackets">Bold Matching Brackets</string>
+    <string name="symbol_pair_completion">Symbol Pair Completion</string>
+    <string name="format_pasted_text">Format Pasted Text</string>
+    <string name="sticky_scroll">Sticky Scroll</string>
+    <string name="enhanced_home_end">Enhanced Home/End</string>
+    <string name="scroll_fling">Scroll Fling</string>
+    <string name="overscroll">Overscroll</string>
+    <string name="delete_empty_line_fast">Delete Empty Line Fast</string>
+    <string name="side_block_line">Side Block Line</string>
+    <string name="round_text_bg">Round Text Background</string>
+    <string name="inlay_hints">Inlay Hints</string>
+    <string name="signature_help">Signature Help</string>
+    <string name="hover_info">Hover Info</string>
+    <string name="enhanced_home_end_desc">Home/End jump to the first or last non-whitespace character. Off uses the absolute line start/end.</string>
+    <string name="disable_soft_kbd_hard_kbd_desc">Hide the soft keyboard when a hardware keyboard is available.</string>
+    <string name="hover_info_desc">Show language documentation and type info when hovering a cursor</string>
+    <string name="inlay_hints_desc">Show inline type and parameter hints from the language server.</string>
+    <string name="magnifier_desc">Magnify text under the selection handle while dragging.</string>
+    <string name="soft_keyboard_desc">Allow the on-screen keyboard to open for the editor.</string>
+    <string name="signature_help_desc">Show parameter info while typing function and method calls.</string>
+    <string name="wordwrap_desc">Wrap long lines in the viewport instead of scrolling horizontally.</string>
+    <string name="completion_animation_desc">Animate the completion popup when it opens or closes.</string>
+    <string name="line_number_desc">Show line numbers in the editor gutter.</string>
+    <string name="pin_line_number_desc">Keep line numbers visible while scrolling horizontally.</string>
+    <string name="minimap_desc">Show a code overview map beside the editor.</string>
+    <string name="round_text_bg_desc">Use rounded backgrounds for selection and highlight ranges.</string>
+    <string name="side_block_line_desc">Draw a vertical guide line for indented code blocks.</string>
+    <string name="sticky_scroll_desc">Pin the current scope headers at the top while scrolling.</string>
+    <string name="symbol_bar_desc">Show the symbol insert bar under the editor.</string>
+    <string name="scroll_fling_desc">Allow fling inertia when scrolling the editor.</string>
+    <string name="overscroll_desc">Allow scrolling slightly past the document edges.</string>
+    <string name="auto_indent_desc">Indent new lines to match the previous line.</string>
+    <string name="bracket_highlight_desc">Highlight matching brackets near the cursor.</string>
+    <string name="bold_matching_brackets_desc">Render matching bracket pairs in bold.</string>
+    <string name="delete_empty_line_fast_desc">Delete a whole empty line with one backspace.</string>
+    <string name="format_pasted_text_desc">Format pasted text when a formatter is available.</string>
+    <string name="symbol_pair_completion_desc">Auto-insert closing quotes, brackets, and parentheses.</string>
+    <string name="use_icu_desc">Use ICU for word selection for more accurate Unicode boundaries.</string>
+    <string name="highlight_current_line">Highlight Current Line</string>
+    <string name="highlight_current_line_desc">Draw a different background on the line containing the cursor.</string>
+    <string name="highlight_current_block">Highlight Current Block</string>
+    <string name="highlight_current_block_desc">Highlight the code block that currently contains the cursor.</string>
+    <string name="sticky_text_selection">Sticky Text Selection</string>
+    <string name="sticky_text_selection_desc">Keep the cursor on the same text row while selecting.</string>
+    <string name="cursor_animation">Cursor Animation</string>
+    <string name="cursor_animation_desc">Animate the cursor when it moves.</string>
+    <string name="scrollbar">Scrollbars</string>
+    <string name="scrollbar_desc">Show horizontal and vertical scrollbars in the editor.</string>
+    <string name="ligature">Ligatures</string>
+    <string name="ligature_desc">Render font ligatures in the editor text.</string>
+    <string name="first_line_number_always_visible">Always Show First Line Number</string>
+    <string name="first_line_number_always_visible_desc">Keep the first line number visible when word wrap is on.</string>
+    <string name="allow_fullscreen">Allow Fullscreen</string>
+    <string name="allow_fullscreen_desc">Allow the editor to enter fullscreen mode.</string>
+    <string name="row_based_home_end">Row-Based Home/End</string>
+    <string name="row_based_home_end_desc">Home/End move within the visible row instead of the logical line.</string>
+    <string name="bidi_indicator">Bidi Direction Indicator</string>
+    <string name="bidi_indicator_desc">Show the text direction indicator for bidirectional text.</string>
+    <string name="auto_completion_on_composing">Auto-Completion While Composing</string>
+    <string name="auto_completion_on_composing_desc">Trigger code completion while the IME is composing text.</string>
+    <string name="delete_multi_spaces">Delete Multiple Spaces</string>
+    <string name="delete_multi_spaces_desc">Delete a run of spaces with one backspace.</string>
+    <string name="mouse_context_menu">Mouse Context Menu</string>
+    <string name="mouse_context_menu_desc">Show a context menu on right-click with a mouse.</string>
+
+    <!-- Gradle -->
+    <string name="aapt2_ovveride">Aapt2 Override</string>
+    <string name="aapt2_ovveride_desc">Use compatible aapt2 library</string>
+    <string name="ndk_dir">Auto NDK Versioning</string>
+    <string name="ndk_dir_desc">Auto-detect and apply compatible NDK version when opening projects</string>
+    <string name="smart_ndk_detected">Use compatible NDK version?</string>
+    <string name="smart_ndk_apply">Apply compatible NDK</string>
+    <string name="smart_ndk_version">version</string>
+    <string name="parallel_execution">Parallel Execution</string>
+    <string name="parallel_execution_desc">Enable parallel builds to improve build times</string>
+    <string name="gradle_daemon">Gradle Daemon</string>
+    <string name="gradle_daemon_desc">Enable Gradle Daemon to significantly reduces build times</string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
+
+    <!-- IDE Config -->
+    <string name="app_settings">App Settings</string>
+    <string name="save_ide_logs_to_documents">Save IDE logs to Documents</string>
+    <string name="editor_settings">Editor</string>
+    <string name="editor_preference">Editor Preference</string>
+    <string name="gradle_settings">Gradle</string>
+    <string name="code_runner">Code Runner</string>
+    <string name="enable_coderun">Enable CodeRun</string>
+    <string name="enable_coderun_desc">Show run icon for supported open files</string>
+    <string name="run_output">Run Output</string>
+    <string name="run_output_desc">Choose where to Output the code</string>
+</resources>

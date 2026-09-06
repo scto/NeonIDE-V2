@@ -1,0 +1,206 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
+plugins {
+    id("com.android.application")
+    alias(libs.plugins.jetbrains.kotlin)
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.kotlin.serialization)
+}
+
+android {
+    namespace = "com.neonide.studio"
+    compileSdk = 37
+    ndkVersion = "29.0.14033849"
+
+    defaultConfig {
+        applicationId = "com.neonide.studio"
+        minSdk = 23
+        targetSdk = 28
+        versionCode = 7
+        versionName = "0.5.0"
+
+        manifestPlaceholders += mapOf(
+            "TERMUX_PACKAGE_NAME" to "com.neonide.studio",
+            "TERMUX_APP_NAME" to "NeonIDE Studio",
+            "TERMUX_API_APP_NAME" to "NeonIDE Studio:API",
+            "TERMUX_BOOT_APP_NAME" to "NeonIDE Studio:Boot",
+            "TERMUX_FLOAT_APP_NAME" to "NeonIDE Studio:Float",
+            "TERMUX_STYLING_APP_NAME" to "NeonIDE Studio:Styling",
+            "TERMUX_TASKER_APP_NAME" to "NeonIDE Studio:Tasker",
+            "TERMUX_WIDGET_APP_NAME" to "NeonIDE Studio:Widget"
+        )
+
+        ndk {
+            abiFilters += "arm64-v8a"
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+        compose = true
+    }
+
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+            freeCompilerArgs = listOf(
+                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+                "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
+                "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi"
+            )
+        }
+    }
+
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file("testkey_untrusted.jks")
+            keyAlias = "alias"
+            storePassword = "xrj45yWGLbsO7W0v"
+            keyPassword = "xrj45yWGLbsO7W0v"
+        }
+
+        create("release") {
+            storeFile = file("release.jks")
+            storePassword = project.findProperty("KEYSTORE_PASSWORD")?.toString()
+                ?: System.getenv("KEYSTORE_PASSWORD")
+            keyAlias = "my-key"
+            keyPassword = project.findProperty("KEY_PASSWORD")?.toString()
+                ?: System.getenv("KEY_PASSWORD")
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    lint {
+        disable += "ProtectedPermissions"
+        disable += "ExpiredTargetSdkVersion"
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
+
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+    androidComponents {
+        onVariants(selector().all()) { variant ->
+            val version = variant.outputs.first().versionName.get()
+            val buildType = variant.buildType
+            val appname = "NeonIDE-v$version-$buildType-arm64-v8a.apk"
+            variant.outputs.forEach { output ->
+                output.outputFileName.set(appname)
+            }
+        }
+    }
+}
+ktlint {
+    android.set(true)
+    ignoreFailures.set(false)
+    reporters {
+        reporter(ReporterType.PLAIN)
+        reporter(ReporterType.HTML)
+    }
+}
+
+detekt {
+    config.setFrom(files("config/detekt/detekt.yml"))
+    allRules = true
+    autoCorrect = true
+}
+
+tasks.named("preBuild") {
+    dependsOn(":app:ktlintFormat")
+    dependsOn(":app:ktlintCheck")
+    // dependsOn(":app:detekt")
+}
+
+configurations.all {
+    exclude(group = "com.atlassian.commonmark")
+}
+
+dependencies {
+    implementation(project(":termux-app"))
+    implementation(project(":termux-shared"))
+    implementation(project(":bonsai-core"))
+    implementation(project(":bonsai-file-system"))
+
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.appcompat)
+    implementation(platform(libs.rosemoe.editor.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.runtime.livedata)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.annotation)
+    implementation(libs.androidx.collection)
+    implementation(libs.androidx.documentfile)
+    implementation(libs.androidx.drawerlayout)
+    implementation(libs.androidx.preference)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.window)
+
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.guava) {
+        exclude(group = "org.codehaus.mojo", module = "animal-sniffer-annotations")
+    }
+    implementation(libs.commons.io)
+    implementation(libs.gson)
+    implementation(libs.moshi)
+
+    implementation(libs.bundles.rosemoe)
+
+    implementation(libs.lsp4j)
+    implementation(libs.jgit)
+
+    implementation("com.halilibo.compose-richtext:richtext-ui:1.0.0-alpha05")
+    implementation("com.halilibo.compose-richtext:richtext-markdown:1.0.0-alpha05")
+    implementation("com.halilibo.compose-richtext:richtext-ui-material3:1.0.0-alpha05")
+    implementation("com.halilibo.compose-richtext:richtext-commonmark:1.0.0-alpha05")
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
+    implementation(libs.coil.svg)
+
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.core.testing)
+    androidTestImplementation(libs.androidx.test.junit)
+    androidTestImplementation(libs.espresso.core)
+}

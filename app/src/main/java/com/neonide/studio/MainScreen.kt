@@ -1,0 +1,169 @@
+package com.neonide.studio
+
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.neonide.studio.dialog.NewProjectDialog
+import com.neonide.studio.ui.components.AppCard
+import com.neonide.studio.ui.components.AppIcon
+import com.neonide.studio.ui.layout.AppBox
+import com.neonide.studio.ui.layout.AppColumn
+
+@Composable
+fun mainScreen(
+    onSetupDevKit: () -> Unit,
+    onCreateProject: () -> Unit,
+    onCreateFlutterProject: () -> Unit,
+    onOpenProject: () -> Unit,
+    onCloneRepo: () -> Unit,
+    onOpenTerminal: () -> Unit,
+    onOpenExtensions: () -> Unit,
+    onOpenSettings: () -> Unit,
+    onOpenAbout: () -> Unit
+) {
+    var showNewProjectDialog by remember { mutableStateOf(false) }
+
+    AppColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(modifier = Modifier.height(60.dp))
+        AppIcon(
+            painter = painterResource(R.drawable.icon),
+            size = 120.dp
+        )
+        Text(
+            text = stringResource(R.string.neonide),
+            style = MaterialTheme.typography.displaySmall,
+            fontWeight = FontWeight.ExtraBold
+        )
+        Text(
+            text = stringResource(R.string.modern_mobile_development),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.outline
+        )
+        Spacer(modifier = Modifier.height(48.dp))
+
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            item {
+                LayoutItem(
+                    stringResource(R.string.new_project),
+                    painterResource(R.drawable.ic_add),
+                    onClick = { showNewProjectDialog = true }
+                )
+            }
+            item {
+                LayoutItem(
+                    stringResource(R.string.open_project),
+                    painterResource(R.drawable.ic_folder),
+                    onOpenProject
+                )
+            }
+            item {
+                LayoutItem(
+                    stringResource(R.string.git_clone),
+                    painterResource(R.drawable.ic_folder_tree),
+                    onCloneRepo
+                )
+            }
+            item {
+                LayoutItem(
+                    stringResource(R.string.setup_devkit),
+                    painterResource(R.drawable.ic_setting),
+                    onSetupDevKit
+                )
+            }
+            item {
+                LayoutItem(
+                    stringResource(R.string.terminal),
+                    painterResource(R.drawable.ic_terminal),
+                    onOpenTerminal
+                )
+            }
+            item {
+                LayoutItem(
+                    stringResource(R.string.extensions),
+                    painterResource(R.drawable.ic_extension),
+                    onOpenExtensions
+                )
+            }
+            item {
+                LayoutItem(
+                    stringResource(R.string.settings),
+                    painterResource(R.drawable.ic_settings),
+                    onOpenSettings
+                )
+            }
+            item {
+                LayoutItem(
+                    stringResource(R.string.about),
+                    painterResource(R.drawable.ic_info),
+                    onOpenAbout
+                )
+            }
+        }
+    }
+
+    if (showNewProjectDialog) {
+        NewProjectDialog(
+            onCreateTemplate = onCreateProject,
+            onCreateFlutterProject = onCreateFlutterProject,
+            onDismiss = { showNewProjectDialog = false }
+        )
+    }
+}
+
+@Composable
+fun LayoutItem(title: String, icon: Painter, onClick: () -> Unit) {
+    AppCard(
+        modifier = Modifier.fillMaxWidth().height(110.dp).clickable(onClick = onClick),
+        shape = MaterialTheme.shapes.large
+    ) {
+        AppBox(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            AppColumn(horizontalAlignment = Alignment.CenterHorizontally) {
+                AppIcon(
+                    painter = icon,
+                    tint = MaterialTheme.colorScheme.primary,
+                    size = 30.dp
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+    }
+}

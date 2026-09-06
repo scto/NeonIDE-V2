@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16">
+
+    <!-- back document rect -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#6C707E"
+        android:strokeWidth="1"
+        android:pathData="M4,3.5
+            H11.5
+            C12.328,3.5 13,4.172 13,5
+            V12
+            C13,12.828 12.328,13.5 11.5,13.5
+            H4
+            C3.172,13.5 2.5,12.828 2.5,12
+            V5
+            C2.5,4.172 3.172,3.5 4,3.5Z"/>
+
+    <!-- text lines -->
+    <path
+        android:fillColor="#6C707E"
+        android:pathData="M5,6 H9 V7 H5 Z"/>
+    <path
+        android:fillColor="#6C707E"
+        android:pathData="M5,8 H9 V9 H5 Z"/>
+    <path
+        android:fillColor="#6C707E"
+        android:pathData="M5,10 H9 V11 H5 Z"/>
+
+    <!-- front document overlap -->
+    <path
+        android:fillColor="#6C707E"
+        android:fillType="evenOdd"
+        android:pathData="M11.002,2
+            H11.600
+            C12.373,2 13.000,2.627 13.000,3.4
+            V3.911
+            C13.001,3.940 13.002,3.970 13.002,4
+            V11.548
+            C13.606,11.112 14.000,10.402 14.000,9.6
+            V3.4
+            C14.000,2.075 12.925,1 11.600,1
+            H6.400
+            C5.597,1 4.886,1.394 4.450,2
+            H6.400
+            H11.002Z"/>
+
+</vector>

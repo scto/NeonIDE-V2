@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16">
+
+    <!-- Base file body -->
+    <path
+        android:fillColor="#402929"
+        android:pathData="M11,2
+        C11.5523,2 12,2.44772 12,3
+        V9
+        H11
+        C10.4477,9 10,9.44772 10,10
+        V14
+        H5
+        C4.44772,14 4,13.5523 4,13
+        V6
+        H6
+        C7.10457,6 8,5.10457 8,4
+        V2
+        H11Z"/>
+
+    <!-- Fold highlight -->
+    <path
+        android:fillColor="#402929"
+        android:pathData="M7,4
+        C7,4.06893 6.99277,4.13617 6.97949,4.20117
+        C6.88625,4.65686 6.48325,5 6,5
+        H4.41406
+        L7,2.41406
+        V4Z"/>
+
+    <!-- Red accent overlay -->
+    <path
+        android:fillColor="#DB5C5C"
+        android:pathData="M11,1
+        C12.1046,1 13,1.89543 13,3
+        V9
+        H12
+        V3
+        C12,2.44772 11.5523,2 11,2
+        H8
+        V4
+        C8,5.10457 7.10457,6 6,6
+        H4
+        V13
+        C4,13.5523 4.44772,14 5,14
+        H10
+        V15
+        H5
+        C3.89543,15 3,14.1046 3,13
+        V5.41406
+        C3.00004,5.1489 3.10547,4.89453 3.29297,4.70703
+        L6.70703,1.29297
+        C6.89453,1.10547 7.1489,1.00004 7.41406,1
+        H11Z"/>
+
+    <!-- Gray overlay glyph -->
+    <path
+        android:fillColor="#CED0D6"
+        android:pathData="M12.4018,16
+        V13.827
+        L10.647,10.014
+        H11.7212
+        L12.656,12.0886
+        C12.727,12.2526 12.7872,12.4139 12.8364,12.5724
+        C12.8856,12.7309 12.9184,12.8539 12.9348,12.9414
+        C12.9566,12.8539 12.9894,12.7309 13.0332,12.5724
+        C13.0824,12.4139 13.1425,12.2526 13.2136,12.0886
+        L14.1238,10.014
+        H15.1898
+        L13.435,13.827
+        V16
+        H12.4018Z"/>
+
+</vector>

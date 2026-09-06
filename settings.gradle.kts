@@ -1,0 +1,49 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+
+rootProject.name = "NeonIDE Studio"
+
+include(":app")
+include(":terminal-emulator")
+include(":terminal-view")
+include(":termux-shared")
+include(":termux-app")
+
+project(":terminal-emulator").projectDir = file("termux-app/terminal-emulator")
+project(":terminal-view").projectDir = file("termux-app/terminal-view")
+project(":termux-shared").projectDir = file("termux-app/termux-shared")
+project(":termux-app").projectDir = file("termux-app/app")
+
+include(":bonsai-core")
+project(":bonsai-core").projectDir = file("bonsai/bonsai-core")
+include(":bonsai-file-system")
+project(":bonsai-file-system").projectDir = file("bonsai/bonsai-file-system")
+include(":bonsai-json")
+project(":bonsai-json").projectDir = file("bonsai/bonsai-json")
+
+includeBuild("compose-richtext") {
+    dependencySubstitution {
+        substitute(module("com.halilibo.compose-richtext:richtext-commonmark"))
+            .using(project(":richtext-commonmark"))
+        substitute(module("com.halilibo.compose-richtext:richtext-ui"))
+            .using(project(":richtext-ui"))
+        substitute(module("com.halilibo.compose-richtext:richtext-markdown"))
+            .using(project(":richtext-markdown"))
+        substitute(module("com.halilibo.compose-richtext:richtext-ui-material3"))
+            .using(project(":richtext-ui-material3"))
+    }
+}

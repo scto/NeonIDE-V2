@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16">
+
+    <!-- bottom bar -->
+    <path
+        android:fillColor="#E66D17"
+        android:pathData="M2,13 H14 V14 H2 Z"/>
+
+    <!-- cup body -->
+    <path
+        android:fillColor="#FFF4EB"
+        android:strokeColor="#E66D17"
+        android:strokeWidth="1"
+        android:pathData="M2.5,3.6
+            C2.5,3.312 2.500,3.126 2.512,2.984
+            C2.523,2.848 2.542,2.798 2.555,2.773
+            C2.602,2.679 2.679,2.602 2.773,2.555
+            C2.798,2.542 2.848,2.523 2.984,2.512
+            C3.126,2.500 3.312,2.500 3.6,2.500
+            H11.4
+            C11.688,2.500 11.874,2.500 12.016,2.512
+            C12.152,2.523 12.202,2.542 12.227,2.555
+            C12.321,2.602 12.398,2.679 12.446,2.773
+            C12.458,2.798 12.477,2.848 12.488,2.984
+            C12.500,3.126 12.500,3.312 12.5,3.6
+            V6.5
+            C12.5,7.932 12.495,8.537 12.349,9.016
+            C12.010,10.135 11.135,11.010 10.016,11.349
+            C9.537,11.495 8.932,11.500 7.5,11.500
+            C6.068,11.500 5.463,11.495 4.984,11.349
+            C3.865,11.010 2.990,10.135 2.651,9.016
+            C2.505,8.537 2.5,7.932 2.5,6.5
+            V3.6Z"/>
+
+    <!-- cup handle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#E66D17"
+        android:strokeWidth="1"
+        android:pathData="M12.5,2.5
+            H14.5
+            C14.776,2.5 15,2.724 15,3.0
+            V4.181
+            C15,4.781 14.642,5.324 14.091,5.560
+            L12.5,6.242
+            V2.5Z"/>
+
+</vector>
