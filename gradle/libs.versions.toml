@@ -11,7 +11,7 @@ material3 = "1.4.0"
 okio = "3.17.0"
 
 core = "1.19.0"
-appcompat = "1.7.1"
+appcompat = "1.8.0"
 constraintlayout = "2.2.2"
 annotation = "1.10.0"
 collection = "1.6.0"
