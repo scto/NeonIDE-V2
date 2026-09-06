@@ -1,0 +1,9 @@
+[submodule "termux-app"]
+	path = termux-app
+	url = https://github.com/scto/termux-app.git
+[submodule "bonsai"]
+	path = bonsai
+	url = https://github.com/scto/bonsai.git
+[submodule "compose-richtext"]
+	path = compose-richtext
+	url = https://github.com/scto/compose-richtext.git
