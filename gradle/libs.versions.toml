@@ -33,7 +33,7 @@ lsp4j = "1.0.0"
 jgit = "7.7.1.202607240634-r"
 desugar = "2.1.5"
 rosemoe-editor = "0.24.6"
-coil = "3.5.0"
+coil = "3.6.1"
 
 junit = "4.13.2"
 robolectric = "4.16.1"
